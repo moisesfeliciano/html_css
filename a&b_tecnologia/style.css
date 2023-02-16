@@ -1,0 +1,261 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;    
+    font-size: 16px;    
+}
+
+.total{
+    width: 95%;
+    max-width: 1000px; /*largura máxima*/
+    margin: auto;
+}
+
+.botao{
+    background-color: #003366;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border: none;
+    padding: 3px 13px;
+    cursor: pointer; /*altera o cursor do mouse*/
+    display: inline-block;
+}
+
+#topo{
+    width: 100%;
+    position: absolute;
+    background-color: rgba(32, 32, 32, 0.5);
+    padding:30px 0;    
+    z-index: 1;
+}
+
+#logo{
+    float: left;
+}
+
+#btn-menu{
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    display: none;
+}
+
+.barra{
+    width: 40px;
+    height: 6px;
+    background-color: #FFF;
+    margin-bottom: 2px;
+    border-radius: 3px;
+}
+
+#menu{
+    float: right;
+    margin-top: 22px;        
+}
+
+#menu a{
+    color: #FFF;
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px 25px;
+    font-size: 14px; /*inicial é de 16px*/
+    text-transform: uppercase; /*converte o texto para caixa alta*/
+    transition: 0.5s;
+    /*float: left;*/
+}
+
+#menu a:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#banner{        
+    /*height: 100vh; 100% da janela*/
+    /*overflow: hidden; esconde o conteúdo caso ultrapasse a largura e altura*/        
+    position: relative;    
+}
+
+#banner img{
+    width: 100%;
+}
+
+#destaque{
+    width: 95%;
+    max-width: 1000px;
+    position: absolute;    
+    bottom: 20px;    
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;    
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#destaque h1{
+    margin: 0;
+    font-size: 20px;
+}
+
+.coluna{
+    width: 22%; /*22% do total*/
+    float: left;
+    margin-right: 4%; /*4% do total*/
+    font-size: 14px;
+    color: #666666;
+    margin-top: 25px;
+    
+}
+
+.coluna:last-child{
+    margin-right: 0;
+}
+
+.coluna img{
+    width: 100%;
+}
+
+.coluna h2{
+    color: #333333;
+    font-size: 18px;
+    margin: 0 0 10px 0; /*top right bottom left*/
+}
+
+.coluna form{
+    margin-top: 15px;
+}
+
+.coluna input[type="text"]{
+    width: 100%; /*100% da coluna*/
+    height: 20px;
+    border: none;
+    background-color: #cccccc;
+    margin-bottom: 5px;
+}
+
+.clearfix{
+    clear: both;
+}
+
+#rodape{
+    width: 100%;
+    background-color: #202020;
+    text-align: center;    
+    color: #cccccc;
+    font-size: 12px;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+/*para telas de até 1000px*/
+@media screen and (max-width:1000px){
+    
+    #logo,#menu{
+        float: none;
+        text-align: center;
+    }
+    
+}
+
+/*tablet(ipad) na vertical*/
+/*
+@media screen and (min-width:768px) and (max-width:1000px){
+*/
+
+@media screen and (max-width:768px){
+    
+    .coluna{
+        width: 47%;
+        margin-right: 0;
+    }
+    
+    /*
+    .coluna:nth-child(2), .coluna:nth-child(4) {
+        float: right;
+    }
+    */
+    
+    /*(2n+2) -> a cada 2 filhos(2n), a partir do 2º (2)*/
+    .coluna:nth-child(2n+2){
+        float: right;
+    }
+    
+    
+}
+
+
+@media screen and (max-width:767px){
+ 
+    #menu{
+        display: none;
+    }
+    
+    #btn-menu{
+        display: block;
+    }
+    
+    /*#banner img{
+        width: auto;
+        height: 350px;
+    }*/
+    
+    #topo{
+        position: static;
+        background-image: url(img/banner.jpg);
+        background-size:  cover;
+    }
+    
+    #banner img{
+        display: none;
+    }
+    
+    #menu a{
+        display: block;
+        background-color: #FFF;
+        color: #003366;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    #destaque{
+        position: static;
+        width: 100%; /*100% do total*/
+        margin-top: 20px;
+        background-color: #003366; 
+    }
+    
+}
+
+
+@media screen and (max-width:480px){
+    .coluna{
+        width: 100%;      
+        margin-bottom: 20px;
+    }
+    
+    .coluna img{
+        /*display: none;*/
+        width: 35%;        
+        float: left;
+        margin: 10px 10px 10px 0;
+    }
+    
+    .coluna:last-child img{
+        display: none;
+    }
+    
+    .botao{
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    /*formatando a classe botao, quando aplicada a tag input*/
+    input.botao{
+        width: 50%;
+    }        
+    
+}
+
+
+
+
+
